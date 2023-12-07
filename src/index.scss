@@ -5,6 +5,9 @@
   --font-color: #444;
   --primary-color: orangered;
 
+  --white-color: 255, 255, 255;
+  --black-color: 0, 0, 0;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -47,7 +50,7 @@ button {
   color: var(--font-color);
   cursor: pointer;
   font-family: var(--font);
-  padding: 0.8rem 2rem;
+  // padding: 0.8rem 2rem;
 }
 
 input {
