@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './MoviesPage.scss';
 import { MovieModel } from 'src/models/movie.model';
+import { baseApi } from 'src/env';
 
 export function MoviesPage(): JSX.Element {
   const [moviesList, setMoviesList] = useState<MovieModel[]>([]);
@@ -12,7 +14,7 @@ export function MoviesPage(): JSX.Element {
 
   const loadMoviesList = async (): Promise<void> => {
     try {
-      const response = await fetch(`http://localhost:3005/api/movies`, { method: 'GET' });
+      const response = await fetch(`${baseApi}/movies`, { method: 'GET' });
       const data = await response.json();
       setMoviesList(data.movies);
     } catch (error) {
@@ -22,14 +24,13 @@ export function MoviesPage(): JSX.Element {
 
   return (
     <div className="movies-page">
-      <h1>MoviesPage</h1>
       <ul className="movies-list">
-        { moviesList?.length > 0 && moviesList.map(x => (
-          <li className="movie-item">
-            <a href={x.coverUrl} className="movie-link">
+        { moviesList?.length > 0 && moviesList.map((x, index) => (
+          <li key={index} className="movie-item">
+            <Link to={x.coverUrl} className="movie-link">
               <img src={x.coverUrl} alt="" className="movie-cover" />
               <span className="movie-title">{x.title}</span>
-            </a>
+            </Link>
           </li>
         ))}
 
