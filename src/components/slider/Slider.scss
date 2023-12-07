@@ -1,9 +1,36 @@
 .slider {
+  position: relative;
+
+  .btn-control {
+    background-color: rgba(var(--black-color), 0.25);
+    font-size: 5rem;
+    height: 100%;
+    position: absolute;
+    translate: 0 -50%;
+    top: 50%;
+    transition: 200ms;
+    width: 6.4rem;
+    z-index: 1;
+
+    &:hover {
+      background-color: rgba(var(--black-color), 0.5);
+    }
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+
   .slider-content {
     align-items: center;
     display: flex;
     flex-wrap: nowrap;
     gap: 2rem;
+    padding: 0 3.2rem;
     transition: 200ms ease;
   }
 }
