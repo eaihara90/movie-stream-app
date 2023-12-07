@@ -1,0 +1,9 @@
+.slider {
+  .slider-content {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    transition: 200ms ease;
+  }
+}
