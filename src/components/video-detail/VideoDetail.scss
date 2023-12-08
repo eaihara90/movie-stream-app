@@ -1,0 +1,53 @@
+.video-detail {
+  height: 100%;
+  
+  .video-wrapper {
+    height: 90vh;
+    position: relative;
+
+    .video-poster {
+      background-color: rgba(var(--black-color), 0.25);
+      display: block;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .video-details {
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      height: 60%;
+      padding: 0 7.2rem;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+
+      .title {
+        font-size: 4rem;
+        margin-bottom: 4rem;
+      }
+  
+      .description {
+        font-size: 2rem;
+        text-wrap: wrap;
+        margin-bottom: 8rem;
+        width: 50%;
+      }
+  
+      .detail-controls {
+        .btn-control {
+          background-color: rgb(var(--white-color));
+          border-radius: 50%;
+          font-size: 2.8rem;
+          height: 5.2rem;
+          width: 5.2rem;
+        }
+      }
+    }
+  }
+}
