@@ -27,6 +27,7 @@
 
 html {
   font-size: 62.5%;
+  height: 100vh;
 }
 
 body {
@@ -34,7 +35,12 @@ body {
   color: var(--font-color);
   font-family: var(--font);
   font-size: 1.6rem;
-  min-height: 100vh;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  overflow-x: hidden;
 }
 
 a, a:visited {
