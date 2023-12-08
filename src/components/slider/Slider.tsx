@@ -3,20 +3,23 @@ import './Slider.scss';
 
 interface SliderProps {
   children: ReactNode;
+  itemWidth: number;
 }
 
-export function Slider({ children }: SliderProps): JSX.Element {
+export function Slider({ children, itemWidth }: SliderProps): JSX.Element {
   const sliderContent = useRef<HTMLDivElement>(null);
   const [translation, setTranslation] = useState<number>(0);
 
   const handleNavigate = (direction: 'left' | 'right'): void => {
-    
     switch (direction) {
       case 'left':
-        setTranslation(_prev => ((window.innerWidth / 3) + translation > 0 ? 0 : _prev + (window.innerWidth / 3)));
+        setTranslation(_prev => (_prev + (itemWidth * 2) > 0 ? 0 : _prev + (itemWidth * 2)));
         break;
       case 'right':
-        setTranslation(_prev => _prev - (window.innerWidth / 3));
+        setTranslation(_prev => {
+          const maxWidth = -(itemWidth * sliderContent!.current!.childElementCount);
+          return translation - (itemWidth * 2) <= maxWidth ? maxWidth : _prev - (itemWidth * 2);
+        });
         break;
     }
   }
