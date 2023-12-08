@@ -26,14 +26,14 @@ export function MoviesPage(): JSX.Element {
   return (
     <div className="movies-page">
       <ul className="movies-list">
-        <Slider>
+        <Slider slideWidth={400}>
           { moviesList?.length > 0 && moviesList.map((x, index) => (
-              <li key={index} className="movie-item">
-                <Link to={x.coverUrl} className="movie-link">
-                  <img src={x.coverUrl} alt="" className="movie-cover" />
-                  <span className="movie-title">{x.title}</span>
-                </Link>
-              </li>
+            <li key={index} className="movie-item">
+              <Link to={`/detail/${x.id}`} className="movie-link">
+                <img src={x.coverUrl} alt="" className="movie-cover" />
+                <span className="movie-title">{x.title}</span>
+              </Link>
+            </li>
           ))}
         </Slider>
       </ul>
