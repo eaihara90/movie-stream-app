@@ -3,22 +3,22 @@ import './Slider.scss';
 
 interface SliderProps {
   children: ReactNode;
-  itemWidth: number;
+  slideWidth: number;
 }
 
-export function Slider({ children, itemWidth }: SliderProps): JSX.Element {
+export function Slider({ children, slideWidth }: SliderProps): JSX.Element {
   const sliderContent = useRef<HTMLDivElement>(null);
   const [translation, setTranslation] = useState<number>(0);
 
   const handleNavigate = (direction: 'left' | 'right'): void => {
     switch (direction) {
       case 'left':
-        setTranslation(_prev => (_prev + (itemWidth * 2) > 0 ? 0 : _prev + (itemWidth * 2)));
+        setTranslation(_prev => (_prev + (slideWidth * 2) > 0 ? 0 : _prev + (slideWidth * 2)));
         break;
       case 'right':
         setTranslation(_prev => {
-          const maxWidth = -(itemWidth * sliderContent!.current!.childElementCount);
-          return translation - (itemWidth * 2) <= maxWidth ? maxWidth : _prev - (itemWidth * 2);
+          const maxWidth = -(slideWidth * sliderContent!.current!.childElementCount);
+          return translation - (slideWidth * 2) <= maxWidth ? maxWidth : _prev - (slideWidth * 2);
         });
         break;
     }
@@ -26,12 +26,14 @@ export function Slider({ children, itemWidth }: SliderProps): JSX.Element {
   
   return (
     <div className="slider">
-      <button
-        className="btn-control left"
-        disabled={translation >= 0}
-        onClick={() => handleNavigate('left')}>
-        <i className="ph ph-caret-left"></i>
-      </button>
+      { translation < 0 &&
+        <button
+          className="btn-control left"
+          disabled={translation >= 0}
+          onClick={() => handleNavigate('left')}>
+          <i className="ph ph-caret-left"></i>
+        </button>
+      }
 
       <div className="slider-content" ref={sliderContent} style={{ translate: translation }}>
         {children}
