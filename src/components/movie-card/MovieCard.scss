@@ -1,0 +1,55 @@
+.movie-item {
+  position: relative;
+  transition: 300ms ease;
+  
+  .movie-link {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 19.8rem;
+    position: relative;
+    width: 33.6rem;
+
+    .movie-cover {
+      border-radius: 8px;
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      transition: 300ms ease;
+      width: 100%;
+    }
+
+    .movie-title {
+      background-color: rgba(var(--black-color), 0.25);
+      color: white;
+      display: block;
+      font-weight: 600;
+      overflow: hidden;
+      padding: 0.8rem 1.2rem;
+      position: absolute;
+      top: 70%;
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
+      width: 80%;
+      z-index: 1;
+    }
+  }
+
+  .movie-description {
+    background-color: black;
+    border-radius: 0 0 8px 8px;
+    height: 200px;
+    position: absolute;
+    top: 100%;
+    transition: 300ms ease;
+    z-index: 1;
+  }
+
+  &:hover {
+    scale: 1.2;
+
+    .movie-cover {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
