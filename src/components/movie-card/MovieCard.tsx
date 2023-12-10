@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './MovieCard.scss';
 import { MovieModel } from 'src/models/movie.model';
+import { IconButton } from '../icon-button/IconButton';
 
 interface MovieCardProps {
   movie: MovieModel;
@@ -25,7 +26,14 @@ export function MovieCard({ movie }: MovieCardProps): JSX.Element {
 
       { showDetails && 
         <div className="movie-description">
-          {movie.description}
+          <div className="controls-wrapper">
+            <IconButton size="4.8rem"><i className="ph-fill ph-play"></i></IconButton>
+            <IconButton size="3.2rem"><i className="ph ph-plus"></i></IconButton>
+          </div>
+          
+          <p className="title">{movie.title}</p>
+          
+          <p className="description">{movie.description}</p>
         </div>
       }
     </li>
