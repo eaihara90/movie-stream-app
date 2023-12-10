@@ -5,8 +5,10 @@ import './MoviesPage.scss';
 import { MovieModel } from 'src/models/movie.model';
 import { baseApi } from 'src/env';
 import { Slider } from 'src/components/slider/Slider';
+import { useBrowserTitle } from 'src/hooks/useBrowserTitle';
 
 export function MoviesPage(): JSX.Element {
+  useBrowserTitle();
   const [moviesList, setMoviesList] = useState<MovieModel[]>([]);
 
   useEffect(() => {
