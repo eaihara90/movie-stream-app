@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom';
+
 import './VideoDetail.scss';
 import { MovieModel } from 'src/models/movie.model';
+import { IconButton } from '../icon-button/IconButton';
 
 interface VideoDetailProps {
   movie: MovieModel;
@@ -21,17 +23,17 @@ export function VideoDetail({ movie, onPlayVideo }: VideoDetailProps): JSX.Eleme
           <p className="description">{movie.description}</p>
 
           <div className="detail-controls">
-            <button
-              className="btn-control"
-              onClick={onPlayVideo}>
+            <IconButton
+              onClick={onPlayVideo}
+              size="5.2rem">
               <i className="ph-fill ph-play"></i>
-            </button>
+            </IconButton>
 
-            <button
-              className="btn-control"
-              onClick={() => history.push('/')}>
-              <i className="ph-fill ph-arrow-left"></i>
-            </button>
+            <IconButton
+              onClick={() => history.push('/')}
+              size="5.2rem">
+              <i className="ph-fill ph-arrow-u-up-left"></i>
+            </IconButton>
           </div>
         </div>
       </div>

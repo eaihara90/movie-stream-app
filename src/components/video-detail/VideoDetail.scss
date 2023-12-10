@@ -40,13 +40,9 @@
       }
   
       .detail-controls {
-        .btn-control {
-          background-color: rgb(var(--white-color));
-          border-radius: 50%;
-          font-size: 2.8rem;
-          height: 5.2rem;
-          width: 5.2rem;
-        }
+        align-items: center;
+        display: flex;
+        gap: 1.2rem;
       }
     }
   }
