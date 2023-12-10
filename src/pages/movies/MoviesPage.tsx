@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import './MoviesPage.scss';
 import { MovieModel } from 'src/models/movie.model';
 import { baseApi } from 'src/env';
 import { Slider } from 'src/components/slider/Slider';
 import { useBrowserTitle } from 'src/hooks/useBrowserTitle';
+import { MovieCard } from 'src/components/movie-card/MovieCard';
 
 export function MoviesPage(): JSX.Element {
   useBrowserTitle();
@@ -28,14 +28,9 @@ export function MoviesPage(): JSX.Element {
   return (
     <div className="movies-page">
       <ul className="movies-list">
-        <Slider slideWidth={400}>
-          { moviesList?.length > 0 && moviesList.map((x, index) => (
-            <li key={index} className="movie-item">
-              <Link to={`/detail/${x.id}`} className="movie-link">
-                <img src={x.coverUrl} alt="" className="movie-cover" />
-                <span className="movie-title">{x.title}</span>
-              </Link>
-            </li>
+        <Slider slideWidth={336}>
+          { moviesList?.length > 0 && moviesList.map((movie, index) => (
+            <MovieCard movie={movie} key={index} />
           ))}
         </Slider>
       </ul>
