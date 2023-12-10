@@ -7,6 +7,7 @@ import { VideoDetail } from 'src/components/video-detail/VideoDetail';
 import { Stream } from 'src/components/stream/Stream';
 import { MovieModel } from 'src/models/movie.model';
 import { useBrowserTitle } from 'src/hooks/useBrowserTitle';
+import { LoadingScreen } from 'src/components/loading-screen/LoadingScreen';
 
 export function DetailPage(): JSX.Element {
   const {id} = useParams<{ id: string }>();
@@ -38,6 +39,8 @@ export function DetailPage(): JSX.Element {
 
   return (
     <div className="detail-page">
+      { loading && <LoadingScreen /> }
+      
       { (!loading && activePage === 'detail') &&
         <VideoDetail
           movie={movie}
