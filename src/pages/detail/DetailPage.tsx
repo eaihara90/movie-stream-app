@@ -38,8 +38,18 @@ export function DetailPage(): JSX.Element {
 
   return (
     <div className="detail-page">
-      { (!loading && activePage === 'detail') && <VideoDetail movie={movie} onPlayVideo={() => setActivePage('video')}/> }
-      { (!loading && activePage === 'video') && <Stream movie={movie} onClose={() => setActivePage('detail')}/> }
+      { (!loading && activePage === 'detail') &&
+        <VideoDetail
+          movie={movie}
+          onPlayVideo={() => setActivePage('video')}
+        />
+      }
+      { (!loading && activePage === 'video') &&
+        <Stream
+          movie={movie}
+          onClose={() => setActivePage('detail')}
+        />
+      }
     </div>
   );
 }

@@ -21,21 +21,21 @@
       bottom: 0;
       display: flex;
       flex-direction: column;
-      height: 60%;
-      padding: 0 7.2rem;
+      gap: 4rem;
+      height: 100%;
+      justify-content: flex-end;
+      padding: 4rem 7.2rem;
       position: absolute;
       width: 100%;
       z-index: 1;
 
       .title {
         font-size: 4rem;
-        margin-bottom: 4rem;
       }
   
       .description {
         font-size: 2rem;
         text-wrap: wrap;
-        margin-bottom: 8rem;
         width: 50%;
       }
   
