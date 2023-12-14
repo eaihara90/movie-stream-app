@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import './Stream.scss';
 import { baseApi } from 'src/env';
 import { MovieModel } from 'src/models/movie.model';
@@ -10,10 +10,22 @@ interface StreamProps {
 
 export function Stream({ movie, onClose }: StreamProps): JSX.Element {
   const video = useRef<HTMLVideoElement>(null);
+  const [showControls, setShowControls] = useState<boolean>(false);
+  let timeout: number;
+
+  const handleShowControls = () => {
+    clearTimeout(timeout);
+
+    setShowControls(true);
+
+    timeout = setTimeout(() => {
+      setShowControls(false)
+    }, 4000);
+  }
   
   return (
-    <div className="stream-page">
-      <div className="video-info-controls">
+    <div className="stream-page" onMouseMove={handleShowControls}>
+      <div className={`video-info-controls ${showControls ? 'visible' : ''}`}>
         <h3 className="title">{movie.title}</h3>
 
         <div className="controls">

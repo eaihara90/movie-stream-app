@@ -30,6 +30,7 @@
       top: 70%;
       text-wrap: nowrap;
       text-overflow: ellipsis;
+      white-space: nowrap;
       width: 80%;
       z-index: 1;
     }
@@ -62,6 +63,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       text-wrap: wrap;
+      white-space: wrap;
       width: 100%;
     }
 

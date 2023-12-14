@@ -6,11 +6,11 @@
   position: relative;
   width: 100%;
 
-  &:hover {
-    .video-info-controls {
-      opacity: 1;
-    }
-  }
+  // &:hover {
+  //   .video-info-controls {
+  //     opacity: 1;
+  //   }
+  // }
   
   .video-info-controls {
     align-items: center;
@@ -24,6 +24,10 @@
     transition: 400ms ease;
     width: 100%;
     z-index: 1;
+
+    &.visible {
+      opacity: 1;
+    }
 
     .title {
       flex-grow: 1;
@@ -54,6 +58,8 @@
   }
   
   #video-player {
+    border: 1px solid var(--grey-700);
+    border-radius: 4px;
     height: 92%;
     /* width: 1280px;
     height: 720px; */
