@@ -1,4 +1,10 @@
 .icon-button {
-  background-color: rgb(var(--white-color));
+  align-items: center;
+  background-color: rgb(var(--c-white));
   border-radius: 50%;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  justify-content: center;
 }

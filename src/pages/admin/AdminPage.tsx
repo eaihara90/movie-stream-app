@@ -1,9 +1,8 @@
 import './AdminPage.scss';
+import { AdminPageRoutes } from './AdminPageRoutes';
 
 export function AdminPage(): JSX.Element {
   return (
-    <div className="admin-page">
-      <h1>Admin Page</h1>
-    </div>
+    <AdminPageRoutes />
   );
 }

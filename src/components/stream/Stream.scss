@@ -14,7 +14,7 @@
   
   .video-info-controls {
     align-items: center;
-    background-color: rgba(var(--black-color), 0.5);
+    background-color: rgba(var(--c-black), 0.5);
     display: flex;
     justify-content: center;
     position: absolute;
@@ -39,7 +39,7 @@
     .controls {
       .btn-controls {
         background-color: transparent;
-        color: var(--color-white);
+        color: var(--c-white);
         font-size: 3rem;
 
         & + .btn-controls {
@@ -48,7 +48,7 @@
       }
 
       .separator {
-        background-color: white;
+        background-color: var(--c-white);
         display: inline-block;
         height: 3rem;
         margin: 0 8px;
@@ -58,7 +58,7 @@
   }
   
   #video-player {
-    border: 1px solid var(--grey-700);
+    border: 1px solid var(--c-grey-700);
     border-radius: 4px;
     height: 92%;
     /* width: 1280px;

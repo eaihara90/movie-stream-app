@@ -1,0 +1,12 @@
+.input-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    color: var(--c-font);
+    font-family: var(--font);
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+}

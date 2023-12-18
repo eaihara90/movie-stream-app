@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import './MoviesPage.scss';
 import { MovieModel } from 'src/models/movie.model';
@@ -10,6 +11,8 @@ import { LoadingScreen } from 'src/components/loading-screen/LoadingScreen';
 
 export function MoviesPage(): JSX.Element {
   useBrowserTitle();
+  const location = useLocation();
+  console.log(location);
   const [moviesList, setMoviesList] = useState<MovieModel[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -37,7 +40,11 @@ export function MoviesPage(): JSX.Element {
       <ul className="movies-list">
         <Slider slideWidth={336}>
           { moviesList?.length > 0 && moviesList.map((movie, index) => (
-            <MovieCard movie={movie} key={index} />
+            <MovieCard
+              canEdit={location.pathname.includes('admin')}
+              movie={movie}
+              key={index}
+            />
           ))}
         </Slider>
       </ul>

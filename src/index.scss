@@ -1,20 +1,22 @@
 :root {
-  --font: 'Lato', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font: 'Poppins', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  --bg-color: #f1f1f1;
-  --font-color: #444;
-  --primary-color: lighten(#1d0c20, 10%);
+  --c-background: #f1f1f1;
+  --c-font: #444;
+  --c-primary: lighten(#1d0c20, 10%);
 
-  --grey-100: #ddd;
-  --grey-200: #ccc;
-  --grey-300: #bbb;
-  --grey-400: #aaa;
-  --grey-500: #999;
-  --grey-600: #888;
-  --grey-700: #777;
+  --c-grey-100: #ddd;
+  --c-grey-200: #ccc;
+  --c-grey-300: #bbb;
+  --c-grey-400: #aaa;
+  --c-grey-500: #999;
+  --c-grey-600: #888;
+  --c-grey-700: #777;
+  --c-grey-800: #666;
+  --c-grey-900: #555;
   
-  --white-color: 255, 255, 255;
-  --black-color: 0, 0, 0;
+  --c-white: 255, 255, 255;
+  --c-black: 0, 0, 0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -23,8 +25,8 @@
 }
 
 [data-theme='dark'] {
-  --bg-color: #1d0c20;
-  --font-color: #f1f1f1;
+  --c-background: #1d0c20;
+  --c-font: #f1f1f1;
 }
 
 * {
@@ -39,8 +41,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--font-color);
+  background-color: var(--c-background);
+  color: var(--c-font);
   font-family: var(--font);
   font-size: 1.6rem;
   height: 100%;

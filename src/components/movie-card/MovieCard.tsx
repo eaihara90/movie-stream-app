@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import './MovieCard.scss';
 import { MovieModel } from 'src/models/movie.model';
 import { IconButton } from '../icon-button/IconButton';
 
 interface MovieCardProps {
+  canEdit: boolean;
   movie: MovieModel;
 }
 
-export function MovieCard({ movie }: MovieCardProps): JSX.Element {
+export function MovieCard({ canEdit, movie }: MovieCardProps): JSX.Element {
+  const history = useHistory();
   const [showDetails, setShowDetails] = useState<boolean>(false);
 
   return (
@@ -29,6 +31,11 @@ export function MovieCard({ movie }: MovieCardProps): JSX.Element {
           <div className="controls-wrapper">
             <IconButton size="4.8rem"><i className="ph-fill ph-play"></i></IconButton>
             <IconButton size="3.2rem"><i className="ph ph-plus"></i></IconButton>
+            { canEdit &&
+              <IconButton size="4.8rem" onClick={() => history.push(`/admin/edit/${movie.id}`)}>
+                <i className="ph ph-note-pencil"></i>
+              </IconButton>
+            }
           </div>
           
           <p className="title">{movie.title}</p>
