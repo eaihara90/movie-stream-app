@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import './NewMovie.scss';
 import { baseApi } from 'src/env';
@@ -22,13 +22,18 @@ export function NewMovie(): JSX.Element {
   }
 
   const saveMovie = async (): Promise<void> => {
-    console.log('[MOVIE]', movie);
-    return;
+    // console.log('[MOVIE]', movie);
+    // return;
     
     setLoading(true);
 
     try {
-      const response = await fetch(`${baseApi}/movies`, { method: 'POST', body: JSON.stringify(movie) });
+      const response = await fetch(`${baseApi}/movies`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(movie)
+      });
+
       const data = await response.json();
       setMovie(data);
       setLoading(false);
@@ -63,7 +68,7 @@ export function NewMovie(): JSX.Element {
         </InputContainer>
         
         <InputContainer label="Storage URL" labelFor="movie-storage-url">
-          <Input id="movie-storage-url" type="text" name="storageUrl" onChange={handleChangeMovie} value={movie.categories} />
+          <Input id="movie-storage-url" type="text" name="storageUrl" onChange={handleChangeMovie} value={movie.storageUrl} />
         </InputContainer>
 
         <button type="submit" onClick={saveMovie}>Save</button>

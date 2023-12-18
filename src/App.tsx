@@ -7,9 +7,7 @@ function App(): JSX.Element {
 
   return (
     <BrowserRouter>
-      <div className="main">
-        <MainRoutes />
-      </div>
+      <MainRoutes />
     </BrowserRouter>
   );
 }

@@ -12,7 +12,6 @@ import { LoadingScreen } from 'src/components/loading-screen/LoadingScreen';
 export function MoviesPage(): JSX.Element {
   useBrowserTitle();
   const location = useLocation();
-  console.log(location);
   const [moviesList, setMoviesList] = useState<MovieModel[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
