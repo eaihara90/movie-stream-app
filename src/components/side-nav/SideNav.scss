@@ -1,0 +1,14 @@
+.side-nav {
+  background-color: rgba(var(--c-white), 0.75);
+  height: 100%;
+  left: 0;
+  padding: 1.2rem;
+  position: fixed;
+  width: 6rem;
+  z-index: 1;
+
+  .side-nav-list {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,40 @@
+.side-nav-item {
+  position: relative;
+  height: 4.8rem;
+  width: 4.8rem;
+
+  .side-nav-link {
+    align-items: center;
+    display: flex;
+    font-size: 3.2rem;
+    justify-content: center;
+    z-index: 1;
+
+    &:hover {
+      & + .link-label {
+        left: 6.8rem;
+        opacity: 1;
+        z-index: 2;
+        // visibility: visible;
+      }
+    }
+
+    .icon {
+      
+    }
+  }
+
+  .link-label {
+    background-color: rgb(var(--c-white));
+    border-radius: 4px;
+    left: 4rem;
+    opacity: 0;
+    padding: 0.4rem 0.8rem;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    transition: 200ms ease;
+    // visibility: hidden;
+    z-index: 0;
+  }
+}
