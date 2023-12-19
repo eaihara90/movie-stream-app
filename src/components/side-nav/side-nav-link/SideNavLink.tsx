@@ -13,6 +13,7 @@ export function SideNavLink({ icon, label, path }: SideNavLinkProps): JSX.Elemen
     <li className="side-nav-item">
       <NavLink
         className="side-nav-link"
+        exact
         to={path}>
         <i className={`ph ${icon} icon`}></i>
       </NavLink>
